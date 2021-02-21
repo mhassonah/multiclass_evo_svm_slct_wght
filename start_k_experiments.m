@@ -133,6 +133,7 @@ parfor i=1:k;
     all_precisions(i,:) = precisions * 100;
     all_f_measures(i,:) = f_measures * 100;
     all_g_means(i,:) = g_mean * 100;
+    all_confusion_mats(:,:,i) = confusion_mat;
     
     if (strcmp(run_type, 'with'))
         all_num_of_feats(i,:) = get_feature_count(individuals);
@@ -143,6 +144,8 @@ parfor i=1:k;
     end
     
 end
+
+all_confusion_mats %#ok<NOPRT>
 
 %% Calculating average & std
 std_accuracy = std(all_accuracies);

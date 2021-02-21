@@ -24,8 +24,8 @@ Optimizers ...
     'CSO', 'CSO_cross'};
 
 MVO = 1;
-GA	= 0;
-PSO	= 0;
+GA	= 1;
+PSO	= 1;
 DA = 0;
 GOA = 0;
 SCA = 0;
@@ -61,9 +61,22 @@ lower_bound = 0.01;
 upper_bound = 1;
 num_of_runs = 10;
 
+%% Files Names Initialization
+str=strtrim(cellstr(num2str(fix(clock)'))');
+strs_spaces = sprintf('-%s' ,str{:});
+filename=strcat('Experiments ',strtrim(strs_spaces));
+
+filename_all_results= strcat(filename,' All Results.csv');
+filename_convergences= strcat(filename,' Convergences.csv');
+filename_average_convergences= strcat(filename,' Average Convergences.csv');
+filename_best_individuals= strcat(filename,' Best Individual.csv');
+filename_summary= strcat(filename,' Summary.csv');
+filename_parameters= strcat(filename,' Parameters.csv');
+            
 %% Datasets Names:
 datasets = {
     'English.csv'
+    'English-3.csv'
 %     'final_mhs_information.csv'
 %     'sleep.csv'
 %     'Dataset.csv'
@@ -122,18 +135,6 @@ for algo=1:algo_count
                 dir_data, num_of_runs, fitness_type, run_type, ...
                 population, max_iteration, lower_bound, upper_bound);
             
-            %% Files Names Initialization
-            str=strtrim(cellstr(num2str(fix(clock)'))');
-            strs_spaces = sprintf('-%s' ,str{:});
-            filename=strcat('Experiments ',strtrim(strs_spaces));
-
-            filename_all_results= strcat(filename,' All Results.csv');
-            filename_convergences= strcat(filename,' Convergences.csv');
-            filename_average_convergences= strcat(filename,' Average Convergences.csv');
-            filename_best_individuals= strcat(filename,' Best Individual.csv');
-            filename_summary= strcat(filename,' Summary.csv');
-            filename_parameters= strcat(filename,' Parameters.csv');
-
             header_all_results = {'Algorithm','Dataset', 'Accuracy', ...
                 'Num Of Feats', 'MSE', 'RMSE', 'MAE', 'Cost', 'Gamma', ...
                 'G-Mean'};

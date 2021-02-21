@@ -23,14 +23,14 @@ return;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [Population] = Function_Handle_Cost(OPTIONS, Population,fitness_type, trainLabel,trainData)
+function [Population] = Function_Handle_Cost(OPTIONS, Population,fitness_type, run_type, trainLabel,trainData)
 
 global MinParValue MaxParValue
 popsize = OPTIONS.popsize;
 for popindex = 1 : popsize
    
         
-        Population(popindex).cost=cost(Population(popindex).chrom, fitness_type, trainLabel,trainData);
+        Population(popindex).cost=cost(Population(popindex).chrom, fitness_type, run_type, trainLabel,trainData);
 end
 return
     
