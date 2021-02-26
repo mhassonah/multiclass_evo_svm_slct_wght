@@ -63,6 +63,9 @@ switch algo
 	case 12 % CSO With crossover
         [~,Best_pos,convergence]=CSO_cross(population, max_iteration, lb, ub, ...
             dim, fobj, fitness_type, run_type, trainLabel, trainData);
+    case 13 % HHO
+        [~,Best_pos,convergence]=HHO(population, max_iteration, lower_bound, upper_bound, ...
+            dim, fobj, fitness_type, run_type, trainLabel, trainData);
 end
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%

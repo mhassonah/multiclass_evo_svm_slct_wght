@@ -21,11 +21,11 @@ function evo_svm ()
 %% Metaheuristic algorithms names:
 Optimizers ...
     = {'MVO','GA','PSO','DA','GOA', 'SCA', 'SSA', 'WOA', 'FA', 'BAT',...
-    'CSO', 'CSO_cross'};
+    'CSO', 'CSO_cross', 'HHO'};
 
-MVO = 1;
-GA	= 1;
-PSO	= 1;
+MVO = 0;
+GA	= 0;
+PSO	= 0;
 DA = 0;
 GOA = 0;
 SCA = 0;
@@ -35,8 +35,9 @@ FA = 0;
 BAT = 0;
 CSO = 0;
 CSO_cross = 0;
+HHO = 1;
 
-algorithms = [MVO GA PSO DA GOA SCA SSA WOA FA BAT CSO CSO_cross];
+algorithms = [MVO GA PSO DA GOA SCA SSA WOA FA BAT CSO CSO_cross HHO];
 
 [~, algo_count]=size(algorithms);
 
@@ -93,7 +94,7 @@ datasets = {
 %     'german'
 %     'vehicle'
 %     'breast_cancer'
-%     'wine'
+    'wine'
 %     'vowel'
 %     'cleveland'
 %     'colon_cancer'
